@@ -83,10 +83,7 @@ class App extends Component {
     //Replace leading zero and decimal in display view
     let displayArr = currDisplay.match(/[^\d.]+|[\d.]+/g);
 
-    console.log(`displayArr1: ${displayArr}`)
-    console.log(`addedOperator1: ${this.state.addedOperator}`)
-    console.log(`evaluated1: ${this.state.evaluated}`)
-    console.log(`result1: ${this.state.result}`)
+   
     if (displayArr) {
       displayArr = displayArr.map((arr) => {
         return arr.replace(/^0+(?!$)/, "").replace(/^\./, "0.");
@@ -108,10 +105,6 @@ class App extends Component {
       });
     }
 
-    console.log(`displayArr2: ${displayArr}`)
-    console.log(`addedOperator2: ${this.state.addedOperator}`)
-    console.log(`evaluated2: ${this.state.evaluated}`)
-    console.log(`result2: ${this.state.result}`)
   }
 
   /******** Set Operator Value *************/
@@ -185,7 +178,6 @@ evaluate(fn){
   render() {
     const { numKeys } = this.state.keyPad;
     const { operatorKeys } = this.state.keyPad;
-    // const { otherNumbers } = this.state.keyPad;
     const { specialKeys } = this.state.keyPad;
     return (
       <div className="calc-main">
