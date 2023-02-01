@@ -119,15 +119,30 @@ class App extends Component {
   /******** Set Operator Value *************/
   setOperatorVal(e) {
     let value = e.target.value;
-    let currDisplay = this.state.display;
+    let currDisplay = ""
 
-    this.setState({
+    // check that previous expression is evaluated? Use result as start of new expression
+    if(this.state.evaluated){
+      currDisplay = this.state.result
+      this.setState({
+      display: currDisplay+value,
+      isDecimalDisabled: false,
+      addedOperator: true,
+      currentOperator: value,
+      evaluated: false
+    });
+    }
+    // if exp is not evaluated, expression is entire input
+    else{
+      currDisplay = this.state.display
+      this.setState({
       display: currDisplay + value,
       isDecimalDisabled: false,
       addedOperator: true,
       currentOperator: value,
       evaluated: false
     });
+    }
   }
 
   /******** Set Special Keys *************/
