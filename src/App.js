@@ -148,9 +148,13 @@ class App extends Component {
       result: ""
     });
   }
+
+/**** Evaluate Function ****/
 evaluate(fn){
   return new Function('return ' + fn)()
 }
+
+/****** Show Result ******/
   showResult() {
     let exp = this.state.display;
     let res = Math.round(1000000000000 * this.evaluate(exp)) / 1000000000000;
