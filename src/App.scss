@@ -41,15 +41,12 @@ button {
   padding: 1rem;
   text-align: center;
   background: rgb(112, 128, 144);
- // border: 0.5px solid black;
-  // border-radius: 2rem;
   margin: 2px;
 
 }
 .key-pad-container {
   display: grid;
   @include grid-template(3, 4);
-// margin: 2px;
 }
 #zero {
   grid-column: span 2;
@@ -58,12 +55,10 @@ button {
 .operator-keys-cont {
   display: grid;
   @include grid-template(2, 2);
-  // grid-gap: 2px;
 }
 .special-keys {
   display: grid;
   @include grid-template(auto, 1);
-  // grid-gap: 2px;
 }
 .special-key-pads {
   background: #138b8f;
@@ -78,13 +73,15 @@ button {
   background: #000;
   height: 70px;
   width: 19rem;
-  color: #decf6c;
+  color: #fff;
   padding: 0.8rem;
   align-content: end;
   text-align: right;
 }
 #display-view #display {
   margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #138b8f;
 }
 @media screen and (max-width: 850px) {
   .calc-main {
