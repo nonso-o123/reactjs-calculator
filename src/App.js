@@ -173,11 +173,6 @@ evaluate(fn){
   }
 
 
-  /**** Use result as new value if an operator is pressed ****/
-  newExpression() {
-
-  }
-
   /*******     RENDER COMPONENTS ***********/
   render() {
     const { numKeys } = this.state.keyPad;
