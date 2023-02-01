@@ -4,8 +4,7 @@ import OperatorKeys from "./components/OperatorKeys";
 import SpecialKeys from "./components/SpecialKeys";
 import './App.scss'
 
-/******************* DECLARATIONS ********************/
-/**    Input Data **/
+/******************* INPUT DATA ********************/
 const calc = {
   numKeys: [
     { seven: 7 },
@@ -33,7 +32,7 @@ const calc = {
 };
 
 
-/*******    Main Component   ***********/
+/*******    MAIN COMPONENT   ***********/
 class App extends Component {
   constructor(props) {
     super(props);
