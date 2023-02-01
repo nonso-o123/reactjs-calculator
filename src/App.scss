@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono");
+#root {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+button {
+  border: none;
+  font-size: 1.5rem;
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 500;
+}
+#decimal:disabled{
+  color: black;
+}
+@mixin grid-template($cols, $rows) {
+  grid-template-columns: repeat($cols, 4rem);
+  grid-template-rows: repeat($rows, 4rem);
+ 
+}
+.calc-main {
+  width: 20.5rem;
+  margin: 5rem auto;
+  border-radius: 3px;
+  border: 5px solid black;
+  background-color: #252b30;
+  display: grid;
+  justify-content: center;
+}
+.pad-container {
+  display: flex;
+  padding: 2px;
+}
+.key-pads {
+  padding: 1rem;
+  text-align: center;
+  background: rgb(112, 128, 144);
+ // border: 0.5px solid black;
+  // border-radius: 2rem;
+  margin: 2px;
+
+}
+.key-pad-container {
+  display: grid;
+  @include grid-template(3, 4);
+// margin: 2px;
+}
+#zero {
+  grid-column: span 2;
+}
+
+.operator-keys-cont {
+  display: grid;
+  @include grid-template(2, 2);
+  // grid-gap: 2px;
+}
+.special-keys {
+  display: grid;
+  @include grid-template(auto, 1);
+  // grid-gap: 2px;
+}
+.special-key-pads {
+  background: #138b8f;
+  margin: 2px;
+}
+.operator-key-pads {
+  background: #de9451;
+  margin: 2px;
+}
+#display-view {
+  display: grid;
+  background: #000;
+  height: 70px;
+  width: 19rem;
+  color: #decf6c;
+  padding: 0.8rem;
+  align-content: end;
+  text-align: right;
+}
+#display-view #display {
+  margin-top: 0.5rem;
+}
+@media screen and (max-width: 850px) {
+  .calc-main {
+    margin: 1rem auto;
+  }
+  #display-view {
+    margin: auto;
+  }
+ .pad-container{
+    margin : auto;
+   justify-content: center;
+    }
+}
