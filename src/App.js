@@ -32,9 +32,6 @@ const calc = {
   }
 };
 
-//const operatorsRegex = /[\-\+\*\/]/;
-//const wrongStartChar = /^[0]{2,100}|^\./;
-
 
 /*******    Main Component   ***********/
 class App extends Component {
