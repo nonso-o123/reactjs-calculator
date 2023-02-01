@@ -54,6 +54,7 @@ class App extends Component {
     this.setSpecialKey = this.setSpecialKey.bind(this);
     this.clearDisplay = this.clearDisplay.bind(this);
     this.showResult = this.showResult.bind(this);
+    this.evaluate = this.evaluate.bind(this)
   }
 
   /******** Set Number Value *************/
@@ -69,10 +70,10 @@ class App extends Component {
 
     //Replace leading zero or decimal in input
     if (
-      (currInput.length == 1 && currInput === "0") ||
+      (currInput.length === 1 && currInput === "0") ||
       this.state.addedOperator
     ) {
-      if (value == ".") currInput = "0";
+      if (value === ".") currInput = "0";
       else currInput = "";
     }
 
@@ -80,7 +81,7 @@ class App extends Component {
     value === "." && this.setState({ isDecimalDisabled: true });
 
     //Replace leading zero and decimal in display view
-    let displayArr = currDisplay.match(/[^\d\.]+|[\d.]+/g);
+    let displayArr = currDisplay.match(/[^\d.]+|[\d.]+/g);
 
     console.log(`displayArr1: ${displayArr}`)
     console.log(`addedOperator1: ${this.state.addedOperator}`)
@@ -154,10 +155,12 @@ class App extends Component {
       result: ""
     });
   }
-
+evaluate(fn){
+  return new Function('return ' + fn)()
+}
   showResult() {
     let exp = this.state.display;
-    let res = Math.round(1000000000000 * eval(exp)) / 1000000000000;
+    let res = Math.round(1000000000000 * this.evaluate(exp)) / 1000000000000;
     this.setState((prev) => ({
       evaluated: true,
       input: res,
@@ -182,7 +185,7 @@ class App extends Component {
   render() {
     const { numKeys } = this.state.keyPad;
     const { operatorKeys } = this.state.keyPad;
-    const { otherNumbers } = this.state.keyPad;
+    // const { otherNumbers } = this.state.keyPad;
     const { specialKeys } = this.state.keyPad;
     return (
       <div className="calc-main">
