@@ -13,6 +13,7 @@ export default function OperatorKeys(props) {
                             value={Object.values(op)}
                             onClick={(e) => props.setOperatorVal(e)}
                             id={Object.keys(op)}
+                            disabled={props.isKeyDisabled}
                         >
                             {Object.values(op)}
                         </button>

@@ -12,6 +12,7 @@ export default function SpecialKeys(props) {
             <button
                 className={`key-pads special-key-pads`}
                 value={props.specialKeys[props.value]}
+                disabled={props.value ==="equals" && props.isKeyDisabled}
                 onClick={(e) => {
                     props.setSpecialKey(e);
                     props.value === "clear" && props.clearDisplay();
