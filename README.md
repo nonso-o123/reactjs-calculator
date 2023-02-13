@@ -1,5 +1,7 @@
 # FreeCodeCamp JavaScript Calculator Project
 
+CodePen: https://codepen.io/nonso-o123/pen/bGaaVbx
+
 ## User Stories:
 
 User Story #1: My calculator should contain a clickable element containing an = (equal sign) with a corresponding id="equals".
